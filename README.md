@@ -8,3 +8,6 @@ Se houver resultado para alguma das pequisas, estes são enviados por email para
 *As pesquisas são realizadas de hora em hora, por um total de 10 horas;
 
 *A partir da segunda pesquisa, resultados repetidos não serão reenviados por emal;
+
+# formato do email
+![alt text](https://github.com/mantisoficial/bot-java/blob/main/projectImages/emailExemplo.jpg?raw=true)
