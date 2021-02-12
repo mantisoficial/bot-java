@@ -1,5 +1,5 @@
 # bot-Atos-do-Dia-java
-Bot criado em Java a partir da biblioteca de automatização de testes Selenium
+Bot criado em Java a partir da biblioteca de automatização de testes Selenium.
 
 # como funciona 
 Ao ser executado, em um arquivo .jar, o bot acessa o site https://biblioteca.aneel.gov.br/index.html e realiza buscas por novos atos referentes as palavras chaves já definidas.
