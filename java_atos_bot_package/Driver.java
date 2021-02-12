@@ -9,7 +9,7 @@ public class Driver {
 		int timeSeconds = 3600;
 
 		JOptionPane.showMessageDialog(null,
-				"O Bot vai ser iniciado. Configurado para " + loopCounter + " atualizaÁ„o(ıes) a cada " + timeSeconds
+				"O Bot vai ser iniciado. Configurado para " + loopCounter + " atualiza√ß√£o(√µes) a cada " + timeSeconds
 						+ " segundo(s).\nClique em OK ou feche a mensagem para continuar.");
 
 		BuscaPorNome buscaNomeCelg = new BuscaPorNome();
@@ -21,12 +21,12 @@ public class Driver {
 
 		while (loopCounter > 0) {
 
-			buscaNomeCelg.buscarNome("");
-			buscaNomeConsorcio.buscarNome("ConsÛrcio Corumb·");
+			buscaNomeCelg.buscarNome("Celg");
+			buscaNomeConsorcio.buscarNome("Cons√≥rcio Corumb√°");
 			buscaNomeLago.buscarNome("Lago Azul");
-			buscaNomePantanal.buscarNome("Pantanal Transmiss„o");
-			buscaNomeVale.buscarNome("Vale do S„o Bartolomeu");
-			buscaNomeFirminopolis.buscarNome("FirminÛpolis");
+			buscaNomePantanal.buscarNome("Pantanal Transmiss√£o");
+			buscaNomeVale.buscarNome("Vale do S√£o Bartolomeu");
+			buscaNomeFirminopolis.buscarNome("Firmin√≥polis");
 
 			if (loopCounter != 1) {
 				try {
@@ -38,6 +38,6 @@ public class Driver {
 			loopCounter--;
 		}
 		JOptionPane.showMessageDialog(null,
-				"AplicaÁ„o finalizada com sucesso.\nClique em OK ou feche a mensagem para encerrar.");
+				"Aplica√ß√£o finalizada com sucesso.\nClique em OK ou feche a mensagem para encerrar.");
 	}
 }
