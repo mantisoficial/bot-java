@@ -270,7 +270,7 @@ public class BuscaPorNome {
 					String msg = "\nNorma: " + norma + "\nData de Assinatura: "+ dataAssinatura + "\nData de Publicação: " + dataPublicacao + "\nEmenta: " + ementa 
 							+  "\nÓrgão de Origem: " + orgaoOrigem + "\nEsfera: " + esfera + "\nSituação: " + situacao + "\nAssuntos: " + assuntos 
 							+ "\nTexto Integral: " + str1;
-					sendEmail.sendEmail(msg, norma);
+					sendEmail.sendEmail(msg, norma, nome);
 					System.out.println("Registro(s) encontrado(s) para " + nome + ".");
 				}
 			} else {
