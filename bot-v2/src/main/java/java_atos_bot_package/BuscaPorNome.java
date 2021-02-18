@@ -155,16 +155,25 @@ public class BuscaPorNome {
 									+ tdRef + "]/td[3]/table/tbody/tr[10]/td[2]/a")).getText();
 							
 						}  else {
-							ementa = "Sem ementa disponÌvel";
+							ementa = "Indispon√≠vel";
 							
 							 orgaoOrigem = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[5]/td[2]/a"))
 									.getText();
 							
-							 esfera = "vazio por enquanto";
-							 situacao = "vazio por enquanto";	
-							 assuntos = "vazio por enquanto";
+							 esfera = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[6]/td[2]"))
+									.getText();
+							
+							 situacao = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[7]/td[2]"))
+									.getText();
+							
+							
+							 assuntos = "Indispon√≠vel";
 							
 							if (chromeDriver.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
 									+ tdRef + "]/td[3]/table/tbody/tr[8]/td[2]/a")).size() != 0) {
@@ -173,7 +182,7 @@ public class BuscaPorNome {
 												+ "]/td[3]/table/tbody/tr[8]/td[2]/a"))
 										.getText();
 							} else {
-								str1 = "N„o foi possÌvel recuperar esse link. Acesse https://biblioteca.aneel.gov.br/index.html para ler o texto integral.";
+								str1 = "N√£o foi poss√≠vel recuperar esse link. Acesse https://biblioteca.aneel.gov.br/index.html para ler o texto integral.";
 							}
 						}
 						
@@ -181,7 +190,7 @@ public class BuscaPorNome {
 						
 					} else {
 						
-						dataAssinatura = "Sem data de assinatura";
+						dataAssinatura = "Indispon√≠vel";
 						dataPublicacao = chromeDriver
 								.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 										+ "]/td[3]/table/tbody/tr[3]/td[2]"))
@@ -226,16 +235,24 @@ public class BuscaPorNome {
 									+ tdRef + "]/td[3]/table/tbody/tr[9]/td[2]/a")).getText();
 							
 						}  else {
-							ementa = "Sem ementa disponÌvel";
+							ementa = "Indispon√≠vel";
 							
 							orgaoOrigem = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[4]/td[2]/a"))
 									.getText();
 							
-							esfera = "vazio por enquanto";
-							situacao = "vazio por enquanto";	
-							assuntos = "vazio por enquanto";
+							esfera = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[5]/td[2]"))
+									.getText();
+							
+							situacao = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[6]/td[2]"))
+									.getText();
+								
+							assuntos = "Indispon√≠vel";
 							
 							if (chromeDriver.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
 									+ tdRef + "]/td[3]/table/tbody/tr[7]/td[2]/a")).size() != 0) {
@@ -244,20 +261,20 @@ public class BuscaPorNome {
 												+ "]/td[3]/table/tbody/tr[7]/td[2]/a"))
 										.getText();
 							} else {
-								str1 = "N„o foi possÌvel recuperar esse link. Acesse https://biblioteca.aneel.gov.br/index.html para ler o texto integral.";
+								str1 = "N√£o foi poss√≠vel recuperar esse link. Acesse https://biblioteca.aneel.gov.br/index.html para ler o texto integral.";
 							}
 						}
 						
 					}
 					
-					String msg = "\nNorma: " + norma + "\nData de Assinatura: "+ dataAssinatura + "\nData de PublicaÁ„o: " + dataPublicacao + "\nEmenta: " + ementa 
-							+  "\n”rg„o de Origem: " + orgaoOrigem + "\nEsfera: " + esfera + "\nSituaÁ„o: " + situacao + "\nAssuntos: " + assuntos 
+					String msg = "\nNorma: " + norma + "\nData de Assinatura: "+ dataAssinatura + "\nData de Publica√ß√£o: " + dataPublicacao + "\nEmenta: " + ementa 
+							+  "\n√ìrg√£o de Origem: " + orgaoOrigem + "\nEsfera: " + esfera + "\nSitua√ß√£o: " + situacao + "\nAssuntos: " + assuntos 
 							+ "\nTexto Integral: " + str1;
 					sendEmail.sendEmail(msg, norma);
 					System.out.println("Registro(s) encontrado(s) para " + nome + ".");
 				}
 			} else {
-				System.out.println("Sem novas atualizaÁıes disponÌveis.");
+				System.out.println("Sem novas atualiza√ß√µes dispon√≠veis.");
 			}
 			this.antigoTdMaxI = Integer.valueOf(tdMaxI);
 		}
