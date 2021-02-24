@@ -19,14 +19,18 @@ public class SendEmailSSL {
     Date dataAtual = new Date();
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     String dataFormatada = dateFormat.format(dataAtual);
-    String username = "botAtosDoDia@gmail.com";
-    String password = "Celg2021";
+    String username = "email@mail.com";
+    String password = "password";
     Properties prop = new Properties();
-    prop.put("mail.smtp.host", "smtp.gmail.com");
-    prop.put("mail.smtp.port", "465");
-    prop.put("mail.smtp.auth", "true");
-    prop.put("mail.smtp.socketFactory.port", "465");
-    prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+    
+    props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.host", "outlook.office365.com");
+        props.put("mail.smtp.socketFactory.port", "587");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "587");
+   
     Session session = Session.getInstance(prop, 
         new Authenticator() {
           protected PasswordAuthentication getPasswordAuthentication() {
@@ -35,7 +39,7 @@ public class SendEmailSSL {
         });
     try {
       MimeMessage mimeMessage = new MimeMessage(session);
-      mimeMessage.setFrom((Address)new InternetAddress("from@gmail.com"));
+      mimeMessage.setFrom((Address) new InternetAddress("email@email.com"));
       mimeMessage.setRecipients(
           Message.RecipientType.TO, 
           (Address[])InternetAddress.parse("botAtosDoDia@gmail.com"));
