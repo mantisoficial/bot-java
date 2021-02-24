@@ -83,7 +83,7 @@ public class BuscaPorNome {
 				.size() == 0) {
 			System.out.println("Nenhum registro encontrado para " + nome + ".");
 		} else {
-			
+
 			wait.until((Function) ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[1]/tbody/tr/td/b[1]")));
 			String tdMaxS = chromeDriver
@@ -102,175 +102,171 @@ public class BuscaPorNome {
 							.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 									+ "]/td[3]/table/tbody/tr[2]/td[2]/b/a"))
 							.getText();
-					
-					
-					if (chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[6]/td[3]/table/tbody/tr[3]/td[1]")).getText().equals("Data de assinatura")) {
-						
+
+					if (chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+							+ "]/td[3]/table/tbody/tr[3]/td[1]")).getText().equals("Data de assinatura")) {
+
 						dataAssinatura = chromeDriver
 								.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 										+ "]/td[3]/table/tbody/tr[3]/td[2]"))
 								.getText();
-						
+
 						dataPublicacao = chromeDriver
 								.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 										+ "]/td[3]/table/tbody/tr[4]/td[2]"))
 								.getText();
-						
-						if (chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-								+ "]/td[3]/table/tbody/tr[5]/td[1]")).getText().equals("Ementa")) {
-							if (chromeDriver.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
-									+ tdRef + "]/td[3]/table/tbody/tr[5]/td[2]/p")).size() != 0) {
+
+						if (chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+								+ tdRef + "]/td[3]/table/tbody/tr[5]/td[1]")).getText().equals("Ementa")) {
+							if (chromeDriver
+									.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+											+ tdRef + "]/td[3]/table/tbody/tr[5]/td[2]/p"))
+									.size() != 0) {
 								ementa = chromeDriver
-										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-												+ "]/td[3]/table/tbody/tr[5]/td[2]/p"))
+										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+												+ tdRef + "]/td[3]/table/tbody/tr[5]/td[2]/p"))
 										.getText();
 							} else {
 								ementa = chromeDriver
-										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-												+ "]/td[3]/table/tbody/tr[5]/td[2]"))
+										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+												+ tdRef + "]/td[3]/table/tbody/tr[5]/td[2]"))
 										.getText();
 							}
-							
+
 							orgaoOrigem = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[6]/td[2]/a"))
 									.getText();
-							
-							 esfera = chromeDriver
+
+							esfera = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[7]/td[2]"))
 									.getText();
-							
-							 situacao = chromeDriver
+
+							situacao = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[8]/td[2]"))
 									.getText();
-							
-							 assuntos = chromeDriver
+
+							assuntos = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[9]/td[2]"))
 									.getText();
-							
-							str1 = chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
-									+ tdRef + "]/td[3]/table/tbody/tr[10]/td[2]/a")).getText();
-							
-						}  else {
+
+							str1 = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[10]/td[2]/a"))
+									.getText();
+
+						} else {
 							ementa = "Indisponível";
-							
-							 orgaoOrigem = chromeDriver
+
+							orgaoOrigem = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[5]/td[2]/a"))
 									.getText();
-							
-							 esfera = chromeDriver
+
+							esfera = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[6]/td[2]"))
 									.getText();
-							
-							 situacao = chromeDriver
+
+							situacao = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[7]/td[2]"))
 									.getText();
-							
-							
-							 assuntos = "Indisponível";
-							
-							if (chromeDriver.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
-									+ tdRef + "]/td[3]/table/tbody/tr[8]/td[2]/a")).size() != 0) {
-								str1 = chromeDriver
-										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-												+ "]/td[3]/table/tbody/tr[8]/td[2]/a"))
-										.getText();
-							} else {
-								str1 = "Não foi possível recuperar esse link. Acesse https://biblioteca.aneel.gov.br/index.html para ler o texto integral.";
-							}
+
+							assuntos = "Indisponível";
+
+							str1 = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[8]/td[2]/a"))
+									.getText();
 						}
-						
-						
-						
+
 					} else {
-						
+
 						dataAssinatura = "Indisponível";
 						dataPublicacao = chromeDriver
 								.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 										+ "]/td[3]/table/tbody/tr[3]/td[2]"))
 								.getText();
-						
-						if (chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-								+ "]/td[3]/table/tbody/tr[4]/td[1]")).getText().equals("Ementa")) {
-							if (chromeDriver.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
-									+ tdRef + "]/td[3]/table/tbody/tr[4]/td[2]/p")).size() != 0) {
+
+						if (chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+								+ tdRef + "]/td[3]/table/tbody/tr[4]/td[1]")).getText().equals("Ementa")) {
+							if (chromeDriver
+									.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+											+ tdRef + "]/td[3]/table/tbody/tr[4]/td[2]/p"))
+									.size() != 0) {
 								ementa = chromeDriver
-										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-												+ "]/td[3]/table/tbody/tr[4]/td[2]/p"))
+										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+												+ tdRef + "]/td[3]/table/tbody/tr[4]/td[2]/p"))
 										.getText();
 							} else {
 								ementa = chromeDriver
-										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-												+ "]/td[3]/table/tbody/tr[4]/td[2]"))
+										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
+												+ tdRef + "]/td[3]/table/tbody/tr[4]/td[2]"))
 										.getText();
 							}
-							
+
 							orgaoOrigem = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[5]/td[2]/a"))
 									.getText();
-							
+
 							esfera = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[6]/td[2]"))
 									.getText();
-							
+
 							situacao = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[7]/td[2]"))
 									.getText();
-							
+
 							assuntos = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[8]/td[2]"))
 									.getText();
-							
-							str1 = chromeDriver.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
-									+ tdRef + "]/td[3]/table/tbody/tr[9]/td[2]/a")).getText();
-							
-						}  else {
+
+							str1 = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[9]/td[2]/a"))
+									.getText();
+
+						} else {
 							ementa = "Indisponível";
-							
+
 							orgaoOrigem = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[4]/td[2]/a"))
 									.getText();
-							
+
 							esfera = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[5]/td[2]"))
 									.getText();
-							
+
 							situacao = chromeDriver
 									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
 											+ "]/td[3]/table/tbody/tr[6]/td[2]"))
 									.getText();
-								
+
 							assuntos = "Indisponível";
-							
-							if (chromeDriver.findElements(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr["
-									+ tdRef + "]/td[3]/table/tbody/tr[7]/td[2]/a")).size() != 0) {
-								str1 = chromeDriver
-										.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
-												+ "]/td[3]/table/tbody/tr[7]/td[2]/a"))
-										.getText();
-							} else {
-								str1 = "Não foi possível recuperar esse link. Acesse https://biblioteca.aneel.gov.br/index.html para ler o texto integral.";
-							}
+
+							str1 = chromeDriver
+									.findElement(By.xpath("//*[@id=\"p_div_aba1_resultado\"]/table[2]/tbody/tr[" + tdRef
+											+ "]/td[3]/table/tbody/tr[7]/td[2]/a"))
+									.getText();
 						}
-						
+
 					}
-					
-					String msg = "\nNorma: " + norma + "\nData de Assinatura: "+ dataAssinatura + "\nData de Publicação: " + dataPublicacao + "\nEmenta: " + ementa 
-							+  "\nÓrgão de Origem: " + orgaoOrigem + "\nEsfera: " + esfera + "\nSituação: " + situacao + "\nAssuntos: " + assuntos 
-							+ "\nTexto Integral: " + str1;
-					sendEmail.sendEmail(msg, norma, nome);
+
+					String msg = "\nNorma: " + norma + "\nData de Assinatura: " + dataAssinatura
+							+ "\nData de Publicação: " + dataPublicacao + "\nEmenta: " + ementa + "\nÓrgão de Origem: "
+							+ orgaoOrigem + "\nEsfera: " + esfera + "\nSituação: " + situacao + "\nAssuntos: "
+							+ assuntos + "\nTexto Integral: " + str1;
+					sendEmail.sendEmail(msg, norma, nome, tdMaxS);
 					System.out.println("Registro(s) encontrado(s) para " + nome + ".");
 				}
 			} else {
