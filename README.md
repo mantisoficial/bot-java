@@ -12,5 +12,7 @@ Além do arquivo executável do bot, é necessário o navegador web Google Chrom
 
 Como é um projeto em Java, é necessário também o download e a instalação do JRE (Java Runtime Environment) (https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR). 
 
+*Java versão 8, atualização 251.
+
 # formato do email
 ![alt text](https://github.com/mantisoficial/bot-java/blob/main/projectImages/emailExemplo.jpg?raw=true)
