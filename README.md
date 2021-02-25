@@ -1,13 +1,16 @@
-# Java Atos Bot 
-Bot criado em Java a partir da biblioteca de automatização de testes Selenium.
+# Java Atos Bot
+Bot criado em Java utilizando a ferramenta Selenium Webdriver, uma coleção de APIs open-source usadas para teste de aplicações web.
 
-# como funciona 
-Ao ser executado, em um arquivo .jar, o bot acessa o site https://biblioteca.aneel.gov.br/index.html e realiza buscas por novos atos referentes as palavras chaves já definidas.
-Se houver resultados para alguma das pequisas, estes são enviados por email para um endereço definido anteriormente.
+# Dependências
+Todas as dependências do projeto foram gerenciadas pela ferramenta de automoção de compilação Maven e estão presentes num arquivo XML(POM) na src.
 
-*As pesquisas são realizadas de hora em hora, por um total de 10 horas;
+# O que faz
+Ao ser executado, o bot acessa o endereço https://biblioteca.aneel.gov.br/index.html e realiza buscas por novos atos do dia com base em palavras chaves já definidas no código. Os resultados encontrados são enviados por e-mail, em forma de alerta, com algumas informações importantes a respeito do ato.
 
-*A partir da segunda pesquisa, resultados repetidos não serão reenviados por emal;
+# Requisitos 
+Além do arquivo executável do bot, é necessário o navegador web Google Chrome (https://www.google.com/intl/pt-BR/chrome/) e a ferramenta de automatização de testes ChromeDriver (https://chromedriver.chromium.org/downloads), que será utilizada pelo Selenium Webdriver. ChromeDriver precisa ser salvo numa pasta nomeada "chrome", na sua unidade de armazenamento dados "C" como no caminho "C:\chrome\chromedriver.exe". É importante que a versão do Google Chrome seja compatível com a versão do ChromeDriver e vice-versa. 
+
+Como é um projeto em Java, é necessário também o download e a instalação do JRE (Java Runtime Environment) (https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR). 
 
 # formato do email
 ![alt text](https://github.com/mantisoficial/bot-java/blob/main/projectImages/emailExemplo.jpg?raw=true)
