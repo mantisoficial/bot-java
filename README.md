@@ -1,4 +1,4 @@
-# bot-Atos-do-Dia-java
+# Java Atos Bot 
 Bot criado em Java a partir da biblioteca de automatização de testes Selenium.
 
 # como funciona 
