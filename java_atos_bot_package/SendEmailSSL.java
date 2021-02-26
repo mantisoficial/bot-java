@@ -19,8 +19,8 @@ public class SendEmailSSL {
 		Date dataAtual = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String dataFormatada = dateFormat.format(dataAtual);
-		String username = "botAtosDoDia@gmail.com";
-		String password = "Celg2021";
+		String username = "username@mail.com";
+		String password = "password";
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
 		prop.put("mail.smtp.port", "465");
@@ -29,7 +29,7 @@ public class SendEmailSSL {
 		prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		Session session = Session.getInstance(prop, new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("botAtosDoDia@gmail.com", "Celg2021");
+				return new PasswordAuthentication("username@mail.com", "password");
 			}
 		});
 		try {
@@ -37,9 +37,9 @@ public class SendEmailSSL {
 			mimeMessage.setFrom((Address) new InternetAddress("from@gmail.com"));
 			mimeMessage.setRecipients(Message.RecipientType.TO,
 					(Address[]) InternetAddress.parse("botAtosDoDia@gmail.com"));
-			mimeMessage.setSubject("Novo Ato Disponível " + msgSub);
+			mimeMessage.setSubject("Novo Ato DisponÃ­vel " + msgSub);
 			mimeMessage
-					.setText("Aviso de Recebimento de Ato Regulatório para " + nome + " " + dataFormatada + "\n" + msg);
+					.setText("Aviso de Recebimento de Ato RegulatÃ³rio para " + nome + " " + dataFormatada + "\n" + msg);
 			Transport.send((Message) mimeMessage);
 			System.out.println("E-mail enviado com sucesso.");
 		} catch (MessagingException e) {
